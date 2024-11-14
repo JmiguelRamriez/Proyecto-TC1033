@@ -1,27 +1,37 @@
 #include<iostream>
-#include "Autos.h"
+#include "Vehiculo.h"
 #include "Consecionaria.h"
 #include "Cliente.h"
 using namespace std;
 
 
 int main(){
-    Autos auto1("Toyota", "Corolla", 2020, "Automatica", 20000);
-    Autos auto2("Honda", "Civic", 2019, "Manual", 18000);
-    Autos auto3("Ford", "Fiesta", 2021, "Automatica", 17000);
-    Autos auto4("Chevrolet", "Spark", 2022, "Manual", 16000);
-    Autos auto5("Nissan", "Sentra", 2020, "Automatica", 21000);
-    Autos auto6("Mazda", "CX-5", 2021, "Automatica", 25000);
+    Coche coche1("Toyota", "Corolla", 2023, "Automática", 22000.0, 4, true);
+    Coche coche2("Ford", "Explorer", 2022, "Automática", 35000.0, 5, true);
+    Coche coche3("Chevrolet", "Camaro", 2021, "Manual", 40000.0, 2, true);
+    Coche coche4("Tesla", "Model 3", 2023, "Automática", 45000.0, 4, true);
+    Coche coche5("Nissan", "Versa", 2020, "Manual", 16000.0, 4, false);
+    Coche coche6("RAM", "1500", 2023, "Automática", 42000.0, 4, true);
+
+    Moto moto1("Yamaha", "YZF-R6", 2021, "Manual", 12000.0, "Deportiva");
+    Moto moto2("Harley-Davidson", "Iron 883", 2023, "Manual", 10000.0, "Cruiser");
+    Moto moto3("BMW", "R 1250 GS", 2022, "Manual", 18000.0, "Aventura");
+    Moto moto4("Honda", "PCX 150", 2020, "Automática", 3500.0, "Scooter");
 
     Consecionaria consecionaria1("al sur de la ciudad");
     Consecionaria consecionaria2("al norte de la ciudad"); 
 
-    consecionaria1.agregarAutos(auto1);
-    consecionaria1.agregarAutos(auto2);
-    consecionaria1.agregarAutos(auto3);
-    consecionaria2.agregarAutos(auto4);
-    consecionaria2.agregarAutos(auto5);
-    consecionaria2.agregarAutos(auto6);
+    consecionaria1.agregarVehiculo(coche1); 
+    consecionaria1.agregarVehiculo(coche1);
+    consecionaria1.agregarVehiculo(coche2);
+    consecionaria1.agregarMoto(moto1);
+    consecionaria1.agregarMoto(moto2);
+    consecionaria2.agregarVehiculo(coche3);
+    consecionaria2.agregarVehiculo(coche4);
+    consecionaria2.agregarVehiculo(coche5);
+    consecionaria2.agregarMoto(moto3);
+    consecionaria2.agregarMoto(moto4);
+    
     consecionaria1.get_ubicacion();
     consecionaria2.get_ubicacion();
 
