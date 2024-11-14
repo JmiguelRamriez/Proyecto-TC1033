@@ -8,15 +8,17 @@ using namespace std;
 class Consecionaria{
     private:
         string ubicacion;
-        Vehiculo inventario[6]; 
-        int pos = 0;
+        Coche coches[3];
+        Moto motos[5];
+        int numCoches = 0;
+        int numMotos = 0;
 
     public:
         Consecionaria();
         Consecionaria(string u): ubicacion (u) {};
 
-        void agregarVehiculo(Vehiculo coche1);
-        void agregarMoto(Vehiculo moto1);
+        void agregarVehiculo(Coche& coche);
+        void agregarVehiculo( Moto& moto);
         string get_ubicacion();
         string informacion();
         void set_ubicacion(string);
@@ -35,14 +37,16 @@ void Consecionaria::set_ubicacion(string u){
     ubicacion = u;
 }
 
-void Consecionaria::agregarVehiculo(Vehiculo coche1 ){
-    inventario[pos] = coche1;
-    pos++;
+void Consecionaria::agregarVehiculo(Coche& coche ){
+    if (numCoches < 3) {
+        coches[numCoches++] = coche;
+    }
 }
 
-void Consecionaria::agregarMoto(Vehiculo moto1 ){
-    inventario[pos] = moto1;
-    pos++;
+void Consecionaria::agregarVehiculo( Moto& moto){
+    if (numMotos < 3) {
+        motos[numMotos++] = moto;
+    }
 }
 
 string Consecionaria::informacion(){
@@ -50,8 +54,16 @@ string Consecionaria::informacion(){
 
     info_consecionaria += "La consecionaria esta ubicacada  " + ubicacion + "\n";
     info_consecionaria += "Los vehiculos que tienen en esta consecionaria son: \n";
-    for(int i=0; i < pos; i++){
-        info_consecionaria += inventario[i].informacion() + "\n";
+
+    info_consecionaria += "\nCoches:\n";
+    for (int i = 0; i < numCoches; ++i) {
+        info_consecionaria += coches[i].informacion() + "\n";
     }
+
+    info_consecionaria += "\nMotos:\n";
+    for (int i = 0; i < numMotos; ++i) {
+        info_consecionaria += motos[i].informacion() + "\n";
+    }
+
     return info_consecionaria;
 }
