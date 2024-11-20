@@ -35,14 +35,14 @@ int main(){
     consecionaria1.get_ubicacion();
     consecionaria2.get_ubicacion();
 
-    string nombre, correo;
+    string nombre, correo, consecionaria;
     int numero;
 
     cout<< "Ingrese su nombre: ", cin>> nombre;
     cout<< "Ingrese su numero de telefono: ", cin>> numero;
     cout<< "Ingrese su correo: ", cin>> correo;
 
-    Cliente cliente1(nombre, correo, numero);
+    Cliente cliente1(nombre, correo, numero, consecionaria);
 
     int opcion;
 
@@ -52,13 +52,16 @@ int main(){
 
     cin>> opcion;
 
-    if(opcion == 1){
-        cout<<consecionaria1.informacion()<<endl;
-    }else if(opcion ==2){
-        cout<<consecionaria2.informacion()<<endl;
-    }else{
-        cout<< "Opcion no valida"<<endl;
-    }
-
+if (opcion == 1) {
+    cliente1.set_consecionaria(consecionaria1.get_ubicacion());
+    cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+    cout << consecionaria1.informacion() << endl;
+} else if (opcion == 2) {
+    cliente1.set_consecionaria(consecionaria2.get_ubicacion());
+    cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+    cout << consecionaria2.informacion() << endl;
+} else {
+    cout << "Opcion no valida" << endl;
+}
     return 0;
 }
