@@ -39,7 +39,7 @@ int main(){
     Coche coche5("Nissan", "Versa", 2020, "Manual", 16000.0, 4, false);
     Coche coche6("RAM", "1500", 2023, "Automatica", 42000.0, 4, true);
 
-    // Se crean objetos de la clase Moto, con diferentes tipos (Deportiva, Cruiser, etc.)
+    // Se crean objetos de la clase Moto, con diferentes tipos
     Moto moto1("Yamaha", "YZF-R6", 2021, "Manual", 12000.0, "Deportiva");
     Moto moto2("Harley-Davidson", "Iron 883", 2023, "Manual", 10000.0, "Cruiser");
     Moto moto3("BMW", "R 1250 GS", 2022, "Manual", 18000.0, "Aventura");
@@ -61,7 +61,7 @@ int main(){
     consecionaria2.agregarVehiculo(moto3);
     consecionaria2.agregarVehiculo(moto4);
     
-    // Llamadas a get_ubicacion() para mostrar la ubicación de cada concesionaria (pero no se guarda o imprime el resultado)
+    // Llamadas a get_ubicacion() para mostrar la ubicación de cada concesionaria 
     consecionaria1.get_ubicacion();
     consecionaria2.get_ubicacion();
 
