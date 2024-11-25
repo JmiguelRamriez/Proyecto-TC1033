@@ -19,7 +19,7 @@ class Consecionaria {
         // Atributos privados de la concesionaria
         string ubicacion; // Ubicación de la concesionaria
         Coche coches[3];  // Lista de coches en la concesionaria (máximo 3)
-        Moto motos[5];    // Lista de motos en la concesionaria (máximo 5)
+        Moto motos[2];    // Lista de motos en la concesionaria (máximo 5)
         int numCoches = 0; // Número actual de coches en la concesionaria
         int numMotos = 0;  // Número actual de motos en la concesionaria
 
@@ -72,7 +72,7 @@ void Consecionaria::agregarVehiculo(Moto& moto) {
 string Consecionaria::informacion() {
     string info_consecionaria = "";
 
-    info_consecionaria += "La concesionaria está ubicada en " + ubicacion + "\n";
+    info_consecionaria += "La concesionaria esta ubicada en " + ubicacion + "\n";
     info_consecionaria += "Los vehículos disponibles en esta concesionaria son: \n";
 
     info_consecionaria += "\n=======Coches=======\n\n";
@@ -87,5 +87,3 @@ string Consecionaria::informacion() {
 
     return info_consecionaria;
 }
-
-#endif
