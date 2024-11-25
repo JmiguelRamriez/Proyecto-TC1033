@@ -1,69 +1,91 @@
-#include <iostream>
-#include <string>
-#include "Vehiculo.h"
-#include "Moto.h"
-#include "Coche.h"
-using namespace std;
+/*
+ * Clase Consecionaria
+ * Representa una concesionaria de vehículos, que contiene un arregp de coches y motos
+ * y permite agregar vehículos y mostrar información sobre ellos.
+ */
 
-class Consecionaria{
+#ifndef CONSECCIONARIA_H
+#define CONSECCIONARIA_H
+
+#include "Coche.h"
+#include "Moto.h"
+#include <string>
+
+
+
+// Clase Consecionaria que maneja la información de una concesionaria
+class Consecionaria {
     private:
-        string ubicacion;
-        Coche coches[3];
-        Moto motos[5];
-        int numCoches = 0;
-        int numMotos = 0;
+        // Atributos privados de la concesionaria
+        string ubicacion; // Ubicación de la concesionaria
+        Coche coches[3];  // Lista de coches en la concesionaria (máximo 3)
+        Moto motos[5];    // Lista de motos en la concesionaria (máximo 5)
+        int numCoches = 0; // Número actual de coches en la concesionaria
+        int numMotos = 0;  // Número actual de motos en la concesionaria
 
     public:
-        Consecionaria();
-        Consecionaria(string u): ubicacion (u) {};
+        // Métodos públicos de la clase Consecionaria
+        Consecionaria(); // Constructor por defecto
+        Consecionaria(string u); // Constructor parametrizado
 
-        void agregarVehiculo(Coche& coche);
-        void agregarVehiculo( Moto& moto);
+        // Métodos para agregar vehículos a la concesionaria
+        void agregarVehiculo(Coche& coche); 
+        void agregarVehiculo(Moto& moto);
+
+        // Métodos getter y setter
         string get_ubicacion();
-        string informacion();
-        void set_ubicacion(string);
+        void set_ubicacion(string u);
 
+        // Método para obtener la información de la concesionaria
+        string informacion();
 };
 
-Consecionaria::Consecionaria(){
-    ubicacion ="";
+// Constructor por defecto
+Consecionaria::Consecionaria() {
+    ubicacion = "";
 }
 
-string Consecionaria::get_ubicacion(){
-    return ubicacion;
-}
+// Constructor parametrizado para establecer la ubicación de la concesionaria
+Consecionaria::Consecionaria(string u) : ubicacion(u) {}
 
-void Consecionaria::set_ubicacion(string u){
-    ubicacion = u;
-}
+// Getter de ubicación
+string Consecionaria::get_ubicacion() { return ubicacion; }
 
-void Consecionaria::agregarVehiculo(Coche& coche ){
+// Setter de ubicación
+void Consecionaria::set_ubicacion(string u) { ubicacion = u; }
+
+// Método para agregar un coche a la concesionaria
+void Consecionaria::agregarVehiculo(Coche& coche) {
     if (numCoches < 3) {
         coches[numCoches++] = coche;
     }
 }
 
-void Consecionaria::agregarVehiculo( Moto& moto){
-    if (numMotos < 3) {
+// Método para agregar una moto a la concesionaria
+void Consecionaria::agregarVehiculo(Moto& moto) {
+    if (numMotos < 5) {
         motos[numMotos++] = moto;
     }
 }
 
-string Consecionaria::informacion(){
+// Método para obtener la información de la concesionaria
+string Consecionaria::informacion() {
     string info_consecionaria = "";
 
-    info_consecionaria += "La consecionaria esta ubicacada  " + ubicacion + "\n";
-    info_consecionaria += "Los vehiculos que tienen en esta consecionaria son: \n";
+    info_consecionaria += "La concesionaria está ubicada en " + ubicacion + "\n";
+    info_consecionaria += "Los vehículos disponibles en esta concesionaria son: \n";
 
-    info_consecionaria += "\nCoches:\n";
+    info_consecionaria += "\n=======Coches=======\n\n";
     for (int i = 0; i < numCoches; ++i) {
         info_consecionaria += coches[i].informacion() + "\n";
     }
 
-    info_consecionaria += "\nMotos:\n";
+    info_consecionaria += "\n=======Motos=======\n\n";
     for (int i = 0; i < numMotos; ++i) {
         info_consecionaria += motos[i].informacion() + "\n";
     }
 
     return info_consecionaria;
 }
+
+#endif
