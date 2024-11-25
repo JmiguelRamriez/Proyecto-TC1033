@@ -1,6 +1,6 @@
 /*
  * Clase Consecionaria
- * Representa una concesionaria de vehículos, que contiene un arregp de coches y motos
+ * Representa una concesionaria de vehículos, que contiene un arreglo de coches y motos
  * y permite agregar vehículos y mostrar información sobre ellos.
  */
 
@@ -18,8 +18,8 @@ class Consecionaria {
     private:
         // Atributos privados de la concesionaria
         string ubicacion; // Ubicación de la concesionaria
-        Coche coches[3];  // Lista de coches en la concesionaria (máximo 3)
-        Moto motos[2];    // Lista de motos en la concesionaria (máximo 5)
+        Coche coches[3];  // Arreglo de coches en la concesionaria (máximo 3)
+        Moto motos[2];    // Arreglo de motos en la concesionaria (máximo 2)
         int numCoches = 0; // Número actual de coches en la concesionaria
         int numMotos = 0;  // Número actual de motos en la concesionaria
 
@@ -63,7 +63,7 @@ void Consecionaria::agregarVehiculo(Coche& coche) {
 
 // Método para agregar una moto a la concesionaria
 void Consecionaria::agregarVehiculo(Moto& moto) {
-    if (numMotos < 5) {
+    if (numMotos < 2) {
         motos[numMotos++] = moto;
     }
 }
@@ -87,3 +87,5 @@ string Consecionaria::informacion() {
 
     return info_consecionaria;
 }
+
+#endif
