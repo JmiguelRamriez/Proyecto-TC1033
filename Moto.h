@@ -14,7 +14,7 @@
 class Moto: public Vehiculo {
     private:
         // Atributo específico de Moto
-        string tipo; // Tipo de moto (Deportiva, Cruiser, etc.)
+        string tipo; // Tipo de moto 
 
     public:
         // Métodos públicos de la clase Moto
