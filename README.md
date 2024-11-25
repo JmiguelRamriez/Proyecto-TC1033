@@ -1,9 +1,24 @@
-# Proyecto-TC1033
+**Proyecto Concesionaria**
 
 **Contexto**
+Este proyecto es un sistema para gestionar vehículos en distintas concesionarias. Se manejan dos tipos de vehículos: coches y motos, que se encuentran en diferentes concesionarias. El sistema permite la interacción con el usuario para que pueda seleccionar una concesionaria y consultar los vehículos disponibles, tanto coches como motos.
 
-Proyecto de venta de autos
-Es una empresa que vende vehículos usados como motos y coches y tiene consecionarias en distintas ubicaciones de la ciudad, cada consecionaria tiene un inventario de autos distintos y cada auto tiene caracteristicas distintas.
+Cada concesionaria puede tener una lista de vehículos de ambos tipos, y el cliente tiene la opción de ver la información sobre los vehículos de la concesionaria seleccionada.
 
-Con este programa se puede ver los vehiculos que tienen en cada ubicacion y ver cual es el vehiculo que conviene mas comprar.
+**Funcionalidad**
+El programa permite las siguientes operaciones:
 
+Agregar vehículos a las concesionarias:
+
+Los vehículos pueden ser coches o motos.
+Los coches tienen características como marca, modelo, año, tipo de transmisión, precio, número de puertas y si están disponibles o no.
+Las motos tienen características como marca, modelo, año, tipo de transmisión, precio y tipo de moto (Deportiva, Cruiser, etc.).
+Seleccionar concesionaria:
+El usuario puede elegir entre dos concesionarias y ver los vehículos disponibles en la concesionaria seleccionada.
+
+
+Información detallada:
+El sistema proporciona la información completa de los vehículos (coches o motos) disponibles en la concesionaria seleccionada.
+
+**Consideraciones**
+El programa está desarrollado en C++ estándar, lo que garantiza su funcionamiento en la mayoría de los sistemas operativos.
