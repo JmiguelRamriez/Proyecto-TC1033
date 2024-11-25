@@ -1,39 +1,56 @@
-#include<iostream>
-#include<string>
-#include "Vehiculo.h"
-using namespace std;
+/*
+ * Clase Moto
+ * Deriva de Vehiculo y contiene atributos y métodos específicos para motos
+ */
 
-class Moto: public Vehiculo{
+#ifndef MOTO_H
+#define MOTO_H
+
+#include "Vehiculo.h"
+#include <string>
+
+
+// Clase Moto que hereda de Vehiculo
+class Moto: public Vehiculo {
     private:
-        string tipo;
+        // Atributo específico de Moto
+        string tipo; // Tipo de moto (Deportiva, Cruiser, etc.)
 
     public:
-        Moto();
-        Moto(string m, string mod, int y, string t, float p, string tipoMoto)
-        : Vehiculo(m, mod, y, t, p), tipo(tipoMoto){};
-        
-        string get_tipo();
-        string informacion();
-        
+        // Métodos públicos de la clase Moto
+        Moto();  // Constructor por defecto
+        Moto(string m, string mod, int y, string t, float p, string tipoMoto); // Constructor parametrizado
+
+        // Getter para el tipo de moto
+        string get_tipo();  
+
+        // Método para obtener la información detallada de la moto
+        string informacion();  
+
+        // Setter para el tipo de moto
         void set_tipo(string);
 };
 
-Moto::Moto(){
+// Constructor por defecto
+Moto::Moto() {
     tipo = "";
 }
 
-string Moto::get_tipo(){
-    return tipo;
-}
+// Constructor parametrizado
+Moto::Moto(string m, string mod, int y, string t, float p, string tipoMoto)
+    : Vehiculo(m, mod, y, t, p), tipo(tipoMoto) {}
 
-string Moto::informacion(){
+// Getter para el tipo de moto
+string Moto::get_tipo() { return tipo; }
+
+// Método para obtener la información detallada de la moto
+string Moto::informacion() {
     string info = Vehiculo::informacion();
     info += "Tipo de moto: " + tipo + "\n";
     return info;
 }
 
+// Setter para el tipo de moto
+void Moto::set_tipo(string t) { tipo = t; }
 
-
-void Moto::set_tipo(string t){
-    tipo = t;
-}
+#endif
