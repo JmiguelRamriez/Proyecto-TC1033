@@ -1,7 +1,7 @@
 /*
  * Clase Vehiculo
  * Contiene los métodos y atributos básicos para representar un vehículo
- * de cualquier tipo (coche, moto, etc.), y es la clase base de la jerarquía.
+ * de cualquier tipo (coche, moto.), y es la clase base de la jerarquía.
  */
 
 #ifndef VEHICULO_H
