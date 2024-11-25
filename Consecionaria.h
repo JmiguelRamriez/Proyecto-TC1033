@@ -73,7 +73,7 @@ string Consecionaria::informacion() {
     string info_consecionaria = "";
 
     info_consecionaria += "La concesionaria esta ubicada en " + ubicacion + "\n";
-    info_consecionaria += "Los vehículos disponibles en esta concesionaria son: \n";
+    info_consecionaria += "Los vehiculos disponibles en esta concesionaria son: \n";
 
     info_consecionaria += "\n=======Coches=======\n\n";
     for (int i = 0; i < numCoches; ++i) {
