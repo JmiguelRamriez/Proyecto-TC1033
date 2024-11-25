@@ -6,8 +6,8 @@ Este proyecto es un sistema para gestionar vehículos en distintas concesionaria
 
 Cada concesionaria puede tener una lista de vehículos de ambos tipos, y el cliente tiene la opción de ver la información sobre los vehículos de la concesionaria seleccionada.
 
+
 **Funcionalidad**
-El programa permite las siguientes operaciones:
 
 Agregar vehículos a las concesionarias:
 
@@ -23,6 +23,7 @@ El usuario puede elegir entre dos concesionarias y ver los vehículos disponible
 Información detallada:
 
 El sistema proporciona la información completa de los vehículos (coches o motos) disponibles en la concesionaria seleccionada.
+
 
 **Consideraciones**
 
