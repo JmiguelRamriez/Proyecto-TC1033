@@ -13,6 +13,7 @@ Agregar vehículos a las concesionarias:
 Los vehículos pueden ser coches o motos.
 Los coches tienen características como marca, modelo, año, tipo de transmisión, precio, número de puertas y si están disponibles o no.
 Las motos tienen características como marca, modelo, año, tipo de transmisión, precio y tipo de moto (Deportiva, Cruiser, etc.).
+
 Seleccionar concesionaria:
 El usuario puede elegir entre dos concesionarias y ver los vehículos disponibles en la concesionaria seleccionada.
 
