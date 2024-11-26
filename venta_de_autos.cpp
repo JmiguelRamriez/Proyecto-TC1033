@@ -20,12 +20,26 @@
 
 using namespace std;  // Usamos el espacio de nombres estándar para simplificar el código
 
+void menuVehiculo(){
+    cout << "Que vehiculo desea agregar?" << endl;
+    cout << "1. Coche"<< endl;
+    cout << "2. Moto"<< endl;
+}
+
+void mostrarMenuC(){
+    cout << "A cual consecionaria quiere agregar el nuevo vehiculo" << endl;
+    cout << "1. Concesionaria 1" << endl;
+    cout << "2. Concesionaria 2" << endl;
+}
+
+
 // Función para mostrar el menú de opciones
 void mostrarMenu(){
     cout << "Que concesionaria quieres visitar?" << endl;
     cout << "1. Concesionaria 1" << endl;
     cout << "2. Concesionaria 2" << endl;
-    cout << "3. Salir" << endl;  
+    cout << "3. Agregar vehiculo a una consecionaria" << endl;
+    cout << "4. Salir" << endl; 
 }
 
 int main(){
@@ -78,30 +92,60 @@ int main(){
 
     // Variable para almacenar la opción seleccionada por el usuario
     int opcion;
+    int Nconsecionaria;
+    int Nvehiculo;
 
     do {
-        // Llamada a la función mostrarMenu para mostrar las opciones de concesionarias disponibles
-        mostrarMenu();
 
-        // Leer la opción seleccionada por el usuario
-        cin>> opcion;
+    mostrarMenu();
 
-        // Dependiendo de la opción seleccionada, se muestra la información de la concesionaria correspondiente
-        if (opcion == 1) {
-            cliente1.set_consecionaria(consecionaria1.get_ubicacion());  // Establecer la concesionaria seleccionada para el cliente
-            cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;  // Mostrar concesionaria seleccionada
-            cout << consecionaria1.informacion() << endl;  // Mostrar información de la concesionaria 1
-        } else if (opcion == 2) {
-            cliente1.set_consecionaria(consecionaria2.get_ubicacion());  // Establecer la concesionaria seleccionada para el cliente
-            cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;  // Mostrar concesionaria seleccionada
-            cout << consecionaria2.informacion() << endl;  // Mostrar información de la concesionaria 2
-        } else if (opcion == 3) {
-            cout << "Saliendo del programa..." << endl;  // Mensaje al salir del programa
-        } else {
-            cout << "Opcion no valida" << endl;  // Si el usuario selecciona una opción no válida
+    cin>> opcion;
+
+
+switch(opcion){
+    case 1:
+        cliente1.set_consecionaria(consecionaria1.get_ubicacion());
+        cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+        cout << consecionaria1.informacion() << endl;
+        break; // Agregar break aquí
+
+    case 2:
+        cliente1.set_consecionaria(consecionaria2.get_ubicacion());
+        cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+        cout << consecionaria2.informacion() << endl;
+        break; // Agregar break aquí
+
+    case 3:
+        mostrarMenuC();
+        cin >> Nconsecionaria;
+        if(Nconsecionaria == 1){
+            menuVehiculo();
+            cin >> Nvehiculo;
+            if (Nvehiculo == 1){
+                
+                cout << "Coche agregado a Concesionaria 1" << endl; 
+            }else{
+                //moto
+                cout << "Moto agregado a Concesionaria 1" << endl; 
+            }
+        }else{//consecionaria 2
+            menuVehiculo();
+            cin >> Nvehiculo;
+            if (Nvehiculo == 1){
+                
+                cout << "Coche agregado a Concesionaria 2" << endl; 
+            }else{
+                //moto
+                cout << "Moto agregado a Concesionaria 2" << endl; 
+            }
         }
+        break; // Agregar break aquí
 
-    } while (opcion != 3);  // El programa seguirá ejecutándose hasta que el usuario elija la opción 3 (salir)
+    case 4:
+        cout << "Saliendo del programa..." << endl;
+        break;
+}
 
-    return 0;  // Finaliza la ejecución del programa
+}while (opcion != 4);
+return 0;  // Finaliza la ejecución del programa
 }
