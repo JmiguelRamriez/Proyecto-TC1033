@@ -15,7 +15,7 @@ class Cliente {
         // Atributos privados del cliente
         string nombre;        // Nombre del cliente
         string correo;        // Correo electrónico del cliente
-        int numero;           // Número telefónico del cliente
+        char numero;           // Número telefónico del cliente
         string consecionaria; // Nombre de la concesionaria elegida
 
     public:
@@ -26,13 +26,13 @@ class Cliente {
         // Métodos getter
         string get_nombre();
         string get_correo();
-        int get_numero();
+        char get_numero();
         string get_concesionaria();
 
         // Métodos setter
         void set_nombre(string);
         void set_correo(string);
-        void set_numero(int);
+        void set_numero(char);
         void set_consecionaria(string);
 };
 
@@ -51,13 +51,13 @@ Cliente::Cliente(string n, string c, int num, string con)
 // Métodos getter
 string Cliente::get_nombre() { return nombre; }
 string Cliente::get_correo() { return correo; }
-int Cliente::get_numero() { return numero; }
+char Cliente::get_numero() { return numero; }
 string Cliente::get_concesionaria() { return consecionaria; }
 
 // Métodos setter
 void Cliente::set_nombre(string n) { nombre = n; }
 void Cliente::set_correo(string c) { correo = c; }
-void Cliente::set_numero(int num) { numero = num; }
+void Cliente::set_numero(char num) { numero = num; }
 void Cliente::set_consecionaria(string con) { consecionaria = con; }
 
 #endif
