@@ -2,7 +2,6 @@
  * Proyecto Concesionarias
  * Jose Miguel Ramirez Gutierrez
  * A01712628
- * 24/11/2024
  */
 
 /**
