@@ -25,7 +25,7 @@ void mostrarMenu(){
     cout << "Que concesionaria quieres visitar?" << endl;
     cout << "1. Concesionaria 1" << endl;
     cout << "2. Concesionaria 2" << endl;
-    cout << "3. Salir" << endl;  // Agregamos la opción de salir
+    cout << "3. Salir" << endl;  
 }
 
 int main(){
