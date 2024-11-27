@@ -20,6 +20,74 @@
 
 using namespace std;  // Usamos el espacio de nombres estándar para simplificar el código
 
+// Función para agregar un nuevo vehículo (Coche o Moto)
+void agregarNuevoVehiculo(Consecionaria& concesionaria) {
+    int tipoVehiculo;
+    cout << "Qué tipo de vehículo desea agregar?" << endl;
+    cout << "1. Coche" << endl;
+    cout << "2. Moto" << endl;
+    cin >> tipoVehiculo;
+
+    // Crear un nuevo Coche
+    if (tipoVehiculo == 1) {
+        string marca, modelo, transmision;
+        int year;
+        float precio;
+        int numPuertas;
+        bool tieneAirbags;
+
+        cout << "Ingrese la marca del coche: ";
+        cin >> marca;
+        cout << "Ingrese el modelo del coche: ";
+        cin >> modelo;
+        cout << "Ingrese el año del coche: ";
+        cin >> year;
+        cout << "Ingrese el tipo de transmision (Automatica/Manual): ";
+        cin >> transmision;
+        cout << "Ingrese el precio del coche: ";
+        cin >> precio;
+        cout << "Ingrese el numero de puertas: ";
+        cin >> numPuertas;
+        cout << "Tiene airbags? (1 para si, 0 para no): ";
+        cin >> tieneAirbags;
+
+        // Crear el nuevo objeto Coche
+        Coche nuevoCoche(marca, modelo, year, transmision, precio, numPuertas, tieneAirbags);
+        
+        // Agregar el coche a la concesionaria
+        concesionaria.agregarVehiculo(nuevoCoche);
+    }
+    // Crear una nueva Moto
+    else if (tipoVehiculo == 2) {
+        string marca, modelo, transmision, tipo;
+        int year;
+        float precio;
+
+        cout << "Ingrese la marca de la moto: ";
+        cin >> marca;
+        cout << "Ingrese el modelo de la moto: ";
+        cin >> modelo;
+        cout << "Ingrese el año de la moto: ";
+        cin >> year;
+        cout << "Ingrese el tipo de transmision (Automatica/Manual): ";
+        cin >> transmision;
+        cout << "Ingrese el precio de la moto: ";
+        cin >> precio;
+        cout << "Ingrese el tipo de moto (Deportiva, Cruiser, Aventura, etc.): ";
+        cin >> tipo;
+
+        // Crear el nuevo objeto Moto
+        Moto nuevaMoto(marca, modelo, year, transmision, precio, tipo);
+        
+        // Agregar la moto a la concesionaria
+        concesionaria.agregarVehiculo(nuevaMoto);
+    }
+    else {
+        cout << "Opción inválida." << endl;
+    }
+}
+
+
 void menuVehiculo(){
     cout << "Que vehiculo desea agregar?" << endl;
     cout << "1. Coche"<< endl;
@@ -58,6 +126,8 @@ int main(){
     Moto moto3("BMW", "R 1250 GS", 2022, "Manual", 18000.0, "Aventura");
     Moto moto4("Honda", "PCX 150", 2020, "Automatica", 3500.0, "Scooter");
 
+    
+
     // Se crean dos concesionarias con ubicaciones específicas
     Consecionaria consecionaria1("al sur de la ciudad");
     Consecionaria consecionaria2("al norte de la ciudad"); 
@@ -79,8 +149,7 @@ int main(){
     consecionaria2.get_ubicacion();
 
     // Variables para almacenar los datos ingresados por el cliente
-    string nombre, correo, consecionaria;
-    int numero;
+    string nombre, correo, consecionaria, numero;
 
     // Solicitar al usuario que ingrese sus datos
     cout<< "Ingrese su nombre: ", cin>> nombre;
@@ -92,9 +161,6 @@ int main(){
 
     // Variable para almacenar la opción seleccionada por el usuario
     int opcion;
-    int Nconsecionaria;
-    int Nvehiculo;
-
     do {
 
     mostrarMenu();
@@ -114,38 +180,25 @@ switch(opcion){
         cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
         cout << consecionaria2.informacion() << endl;
         break; // Agregar break aquí
+            case 3: {
+                int Nconsecionaria;
+                mostrarMenuC();
+                cin >> Nconsecionaria;
 
-    case 3:
-        mostrarMenuC();
-        cin >> Nconsecionaria;
-        if(Nconsecionaria == 1){
-            menuVehiculo();
-            cin >> Nvehiculo;
-            if (Nvehiculo == 1){
-                
-                cout << "Coche agregado a Concesionaria 1" << endl; 
-            }else{
-                //moto
-                cout << "Moto agregado a Concesionaria 1" << endl; 
+                if (Nconsecionaria == 1) {
+                    agregarNuevoVehiculo(consecionaria1);
+                } else if (Nconsecionaria == 2) {
+                    agregarNuevoVehiculo(consecionaria2);
+                }
+                break;
             }
-        }else{//consecionaria 2
-            menuVehiculo();
-            cin >> Nvehiculo;
-            if (Nvehiculo == 1){
-                
-                cout << "Coche agregado a Concesionaria 2" << endl; 
-            }else{
-                //moto
-                cout << "Moto agregado a Concesionaria 2" << endl; 
-            }
+            case 4:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opción no válida. Intente nuevamente." << endl;
         }
-        break; // Agregar break aquí
+    } while (opcion != 4);
 
-    case 4:
-        cout << "Saliendo del programa..." << endl;
-        break;
-}
-
-}while (opcion != 4);
-return 0;  // Finaliza la ejecución del programa
+    return 0;
 }
