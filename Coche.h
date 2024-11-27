@@ -27,7 +27,6 @@ class Coche: public Vehiculo {
 
         // Método para obtener la información detallada del coche
         string informacion();
-        Coche CrearCoche();
         // Setters para los atributos específicos del coche
         void set_numero_puerta(int);
         void set_airbag(bool);
@@ -48,35 +47,6 @@ int Coche::get_numero_puerta() { return numero_puerta; }
 
 // Getter para el airbag
 bool Coche::get_airbag() { return airbag; }
-
-// Método para crear un coche solicitando los datos desde la consola
-Coche Coche::CrearCoche() {
-    string marca, modelo, transmision;
-    int year, num_puertas;
-    float precio;
-    bool airbag;
-
-    cout << "Ingrese la marca del coche: ";
-    cin >> marca;
-    cout << "Ingrese el modelo del coche: ";
-    cin >> modelo;
-    cout << "Ingrese el año del coche: ";
-    cin >> year;
-    cout << "Ingrese el tipo de transmision (Automatica/Manual): ";
-    cin >> transmision;
-    cout << "Ingrese el precio del coche: ";
-    cin >> precio;
-    cout << "Ingrese el número de puertas: ";
-    cin >> num_puertas;
-    cout << "¿Tiene airbag? (1 para sí, 0 para no): ";
-    cin >> airbag;
-
-    // Crear el objeto Coche usando el constructor parametrizado
-    Coche nuevoCoche(marca, modelo, year, transmision, precio, num_puertas, airbag);
-    cout << "Coche creado con éxito!\n";
-    return nuevoCoche;
-}
-
 
 // Método para obtener la información detallada del coche
 string Coche::informacion() {
