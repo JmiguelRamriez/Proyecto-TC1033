@@ -23,7 +23,7 @@ using namespace std;  // Usamos el espacio de nombres estándar para simplificar
 // Función para agregar un nuevo vehículo (Coche o Moto)
 void agregarNuevoVehiculo(Consecionaria& concesionaria) {
     int tipoVehiculo;
-    cout << "Qué tipo de vehículo desea agregar?" << endl;
+    cout << "Que tipo de vehiculo desea agregar?" << endl;
     cout << "1. Coche" << endl;
     cout << "2. Moto" << endl;
     cin >> tipoVehiculo;
@@ -87,21 +87,21 @@ void agregarNuevoVehiculo(Consecionaria& concesionaria) {
     }
 }
 
-
+// Función para mostrar el menú de opciones para seleccionar tipo de vehículo
 void menuVehiculo(){
     cout << "Que vehiculo desea agregar?" << endl;
-    cout << "1. Coche"<< endl;
-    cout << "2. Moto"<< endl;
+    cout << "1. Coche" << endl;
+    cout << "2. Moto" << endl;
 }
 
+// Función para mostrar el menú de concesionarias
 void mostrarMenuC(){
     cout << "A cual consecionaria quiere agregar el nuevo vehiculo" << endl;
     cout << "1. Concesionaria 1" << endl;
     cout << "2. Concesionaria 2" << endl;
 }
 
-
-// Función para mostrar el menú de opciones
+// Función para mostrar el menú principal de opciones
 void mostrarMenu(){
     cout << "Que concesionaria quieres visitar?" << endl;
     cout << "1. Concesionaria 1" << endl;
@@ -125,8 +125,6 @@ int main(){
     Moto moto2("Harley-Davidson", "Iron 883", 2023, "Manual", 10000.0, "Cruiser");
     Moto moto3("BMW", "R 1250 GS", 2022, "Manual", 18000.0, "Aventura");
     Moto moto4("Honda", "PCX 150", 2020, "Automatica", 3500.0, "Scooter");
-
-    
 
     // Se crean dos concesionarias con ubicaciones específicas
     Consecionaria consecionaria1("al sur de la ciudad");
@@ -152,9 +150,12 @@ int main(){
     string nombre, correo, consecionaria, numero;
 
     // Solicitar al usuario que ingrese sus datos
-    cout<< "Ingrese su nombre: ", cin>> nombre;
-    cout<< "Ingrese su numero de telefono: ", cin>> numero;
-    cout<< "Ingrese su correo: ", cin>> correo;
+    cout << "Ingrese su nombre: "; 
+    cin >> nombre;
+    cout << "Ingrese su numero de telefono: "; 
+    cin >> numero;
+    cout << "Ingrese su correo: "; 
+    cin >> correo;
 
     // Crear un objeto Cliente con los datos ingresados
     Cliente cliente1(nombre, correo, numero, consecionaria);
@@ -163,42 +164,47 @@ int main(){
     int opcion;
     do {
 
-    mostrarMenu();
+        // Muestra el menú principal de opciones
+        mostrarMenu();
 
-    cin>> opcion;
+        // Lee la opción seleccionada por el usuario
+        cin >> opcion;
 
+        // Estructura de control para realizar acciones dependiendo de la opción
+        switch(opcion){
+            case 1:
+                cliente1.set_consecionaria(consecionaria1.get_ubicacion());
+                cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+                cout << consecionaria1.informacion() << endl;
+                break;
 
-switch(opcion){
-    case 1:
-        cliente1.set_consecionaria(consecionaria1.get_ubicacion());
-        cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
-        cout << consecionaria1.informacion() << endl;
-        break; // Agregar break aquí
+            case 2:
+                cliente1.set_consecionaria(consecionaria2.get_ubicacion());
+                cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
+                cout << consecionaria2.informacion() << endl;
+                break; 
 
-    case 2:
-        cliente1.set_consecionaria(consecionaria2.get_ubicacion());
-        cout << "Concesionaria seleccionada: " << cliente1.get_concesionaria() << endl;
-        cout << consecionaria2.informacion() << endl;
-        break; // Agregar break aquí
-            case 3: {
+            case 3: 
                 int Nconsecionaria;
-                mostrarMenuC();
+                mostrarMenuC(); // Muestra las concesionarias disponibles
                 cin >> Nconsecionaria;
 
                 if (Nconsecionaria == 1) {
-                    agregarNuevoVehiculo(consecionaria1);
+                    agregarNuevoVehiculo(consecionaria1); // Agrega vehículo a la concesionaria 1
                 } else if (Nconsecionaria == 2) {
-                    agregarNuevoVehiculo(consecionaria2);
+                    agregarNuevoVehiculo(consecionaria2); // Agrega vehículo a la concesionaria 2
                 }
                 break;
-            }
+
             case 4:
                 cout << "Saliendo del programa..." << endl;
                 break;
+
             default:
                 cout << "Opción no válida. Intente nuevamente." << endl;
         }
-    } while (opcion != 4);
 
-    return 0;
+    } while (opcion != 4);  // El ciclo continua hasta que el usuario elige salir
+
+    return 0;  // Fin del programa
 }
