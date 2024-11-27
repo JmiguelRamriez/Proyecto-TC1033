@@ -9,8 +9,8 @@
 class Consecionaria {
     private:
         string ubicacion;   // Ubicación de la concesionaria
-        Coche coches[5];    // Arreglo de coches en la concesionaria (máximo 5)
-        Moto motos[5];      // Arreglo de motos en la concesionaria (máximo 5)
+        Coche coches[10];    // Arreglo de coches en la concesionaria (máximo 5)
+        Moto motos[10];      // Arreglo de motos en la concesionaria (máximo 5)
         int numCoches = 0;  // Número actual de coches en la concesionaria
         int numMotos = 0;   // Número actual de motos en la concesionaria
 
@@ -62,7 +62,7 @@ void Consecionaria::agregarVehiculo(Moto& moto) {
     }
 }
 
-void Consecionaria::agregarVehiculo(Moto& nuevmoto) {
+void Consecionaria::agregarnuevVehiculo(Moto& nuevmoto) {
     if (numMotos < 5) {
         motos[numMotos++] = nuevmoto;
     } else {
