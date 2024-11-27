@@ -26,7 +26,6 @@ class Moto: public Vehiculo {
 
         // Método para obtener la información detallada de la moto
         string informacion();  
-        Moto CrearMoto();
         // Setter para el tipo de moto
         void set_tipo(string);
 };
@@ -42,29 +41,6 @@ Moto::Moto(string m, string mod, int y, string t, float p, string tipoMoto)
 
 // Getter para el tipo de moto
 string Moto::get_tipo() { return tipo; }
-
-Moto Moto::CrearMoto(){
-    string marca, modelo, transmision, tipo;
-    int year;
-    float precio;
-
-    cout << "Ingrese la marca de la moto: ";
-    cin >> marca;
-    cout << "Ingrese el modelo de la moto: ";
-    cin >> modelo;
-    cout << "Ingrese el año de la moto: ";
-    cin >> year;
-    cout << "Ingrese el tipo de transmision (Automatica/Manual): ";
-    cin >> transmision;
-    cout << "Ingrese el precio de la moto: ";
-    cin >> precio;
-    cout << "Ingrese el tipo de moto (Deportiva/Cruiser/Aventura/etc.): ";
-    cin >> tipo;
-
-    Moto nuevMoto(marca, modelo, year, transmision, precio, tipo);
-    cout << "Moto creada con éxito!\n";
-    return nuevMoto;
-}
 
 // Método para obtener la información detallada de la moto
 string Moto::informacion() {
