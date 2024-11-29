@@ -1,7 +1,7 @@
-/*
- * Clase Moto
- * Deriva de Vehiculo y contiene atributos y métodos específicos para motos
- */
+// José Miguel Ramírez Gutiérrez
+// A01712628
+// Proyecto Concesionarias
+// Clase Moto, derivada de Vehículo, que representa una moto con características específicas.
 
 #ifndef MOTO_H
 #define MOTO_H
@@ -9,47 +9,58 @@
 #include "Vehiculo.h"
 #include <string>
 
+// Creación de la clase Moto
+// La clase Moto hereda de la clase Vehiculo y agrega el atributo tipo, que especifica
+// el tipo de moto (por ejemplo: deportiva, cruiser, etc.). Proporciona métodos
+// específicos para manejar esta información.
+class Moto : public Vehiculo {
+private:
 
-// Clase Moto que hereda de Vehiculo
-class Moto: public Vehiculo {
-    private:
-        // Atributo específico de Moto
-        string tipo; // Tipo de moto 
+    //Declara las variables de instancia
 
-    public:
-        // Métodos públicos de la clase Moto
-        Moto();  // Constructor por defecto
-        Moto(string m, string mod, int y, string t, float p, string tipoMoto); // Constructor parametrizado
+    string tipo; 
 
-        // Getter para el tipo de moto
-        string get_tipo();  
+public:
 
-        // Método para obtener la información detallada de la moto
-        string informacion();  
-        // Setter para el tipo de moto
-        void set_tipo(string);
+    // Constructor
+
+    Moto(); // Constructor por defecto
+    Moto(string m, string mod, int y, string t, float p, string t_p); // Constructor parametrizado
+
+    string get_tipo();
+    void set_tipo(string t_p);
+    string informacion();
 };
 
+// Implementación de la clase
+
+// Constructores
+
 // Constructor por defecto
-Moto::Moto() {
-    tipo = "";
-}
+// Inicializa el atributo tipo con un valor vacío.
+Moto::Moto() : tipo("") {}
 
 // Constructor parametrizado
-Moto::Moto(string m, string mod, int y, string t, float p, string tipoMoto)
-    : Vehiculo(m, mod, y, t, p), tipo(tipoMoto) {}
+Moto::Moto(string m, string mod, int y, string t, float p, string t_p)
+    : Vehiculo(m, mod, y, t, p), tipo(t_p) {}
 
-// Getter para el tipo de moto
-string Moto::get_tipo() { return tipo; }
+// Métodos getter y setter
 
-// Método para obtener la información detallada de la moto
-string Moto::informacion() {
-    string info = Vehiculo::informacion();
-    info += "Tipo de moto: " + tipo + "\n";
-    return info;
+//@return string: tipo de la moto
+string Moto::get_tipo() { 
+    return tipo; 
 }
 
-// Setter para el tipo de moto
-void Moto::set_tipo(string t) { tipo = t; }
+//@param string t_p: nuevo tipo de la moto
+void Moto::set_tipo(string t_p) { 
+    tipo = t_p; 
+}
+
+//@return string: información detallada, combinando atributos de Vehiculo y Moto
+string Moto::informacion() {
+    string info = Vehiculo::informacion();  // Obtiene información de la clase base Vehiculo
+    info += "Tipo de moto: " + tipo + "\n";  // Añade la información específica de la moto
+    return info;
+}
 
 #endif
