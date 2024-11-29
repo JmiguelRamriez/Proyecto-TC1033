@@ -2,7 +2,7 @@
 
 ## **Contexto**
 
-Este proyecto es un sistema para gestionar vehículos en distintas concesionarias. Se manejan dos tipos de vehículos: coches y motos, que se encuentran en diferentes concesionarias. El sistema permite la interacción con el usuario para que pueda seleccionar una concesionaria y consultar los vehículos disponibles, tanto coches como motos.
+Este proyecto es un sistema para gestionar vehículos en distintas concesionarias. Se manejan dos tipos de vehículos: coches y motos, que se encuentran en diferentes concesionarias. El sistema permite la interacción con el usuario para que pueda seleccionar una concesionaria y consultar o los vehículos disponibles y tambien agregas nuevos vehiculos, tanto coches como motos.
 
 Cada concesionaria puede tener una lista de vehículos de ambos tipos, y el cliente tiene la opción de ver la información sobre los vehículos de la concesionaria seleccionada.
 
@@ -30,4 +30,7 @@ El sistema proporciona la información completa de los vehículos (coches o moto
 El programa está desarrollado en C++ estándar, lo que garantiza su funcionamiento en la mayoría de los sistemas operativos.
 
 ## **Correcciones**
-
+1. En el primer avance se olvido de enviar el repositorio de GitHub.
+2. Se agregaron los constructores al UML.
+3. Se termino de agregar los metodos y atributos faltantes del UML al codigo.
+4. Se termino de arreglar la UML y se añadió la funcion de agregar nuevos vehiculos a cada consecionaria.
